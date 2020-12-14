@@ -112,11 +112,26 @@
                 String[] splitVersion = value.get(i).split("\\+");
 
 
-                str1 = "<div style=\"margin-top: 4px; text-align: center\">"
-                        + "<a href=\"detail.jsp?packageName=" + key + "&versionCode=" + splitVersion[0]
-                        + "&versionCode=" + splitVersion[1] + "\" target=\"_blank\">"
-                        + key + ": " + value.get(i) + "</a>"
-                        + "</div>";
+                if(splitVersion.length < 2){
+                    str1 = "<div style=\"margin-top: 4px; text-align: center\">"
+                            + "<a href=\"detail.jsp?packageName=" + key + "&versionCode=" + value.get(i) + "\" target=\"_blank\">"
+                            + key + ": " + value.get(i) + "</a>"
+                            + "</div>";
+
+                }else if(splitVersion.length == 2){
+                    str1 = "<div style=\"margin-top: 4px; text-align: center\">"
+                            + "<a href=\"detail.jsp?packageName=" + key + "&versionCode=" + splitVersion[0]
+                            + "&versionCode=" + splitVersion[1] + "\" target=\"_blank\">"
+                            + key + ": " + value.get(i) + "</a>"
+                            + "</div>";
+
+                }else {
+                    str1 = "<div style=\"margin-top: 4px; text-align: center\">"
+                            + "<a href=\"detail.jsp?packageName=" + key + "&versionCode=" + value.get(i) + "\" target=\"_blank\">"
+                            + key + ": " + value.get(i) + "</a>"
+                            + "</div>";
+
+                }
 
             } else {
 
