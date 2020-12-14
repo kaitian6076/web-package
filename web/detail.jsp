@@ -94,12 +94,12 @@
     <div id="divDetailContainer" style="display: none">
 
 
-        <div style="font-size: 19px; font-weight: bold; margin-top: 10px; margin-left: 10px">
+        <div style="font-size: 19px; font-weight: bold; margin-top: 5px; margin-left: 10px">
             Information
         </div>
 
         <div id="informationDivId" style="background: whitesmoke;
-     padding: 10px 20px 12px 20px; margin: 15px 0px 0px 0px; border-radius: 6px">
+     padding: 10px 20px 12px 20px; margin: 13px 0px 0px 0px; border-radius: 6px">
 
             <div>
                 <span style="font-weight: bold;">Description: </span>
@@ -124,7 +124,7 @@
         </div>
 
 
-        <div style="font-size: 19px; font-weight: bold; margin-top: 35px; margin-left: 10px">
+        <div style="font-size: 19px; font-weight: bold; margin-top: 30px; margin-left: 10px">
             README.md
         </div>
 
@@ -134,7 +134,7 @@
         </div>
 
 
-        <div style="font-size: 19px; font-weight: bold; margin-top: 35px; margin-left: 10px">
+        <div style="font-size: 19px; font-weight: bold; margin-top: 30px; margin-left: 10px">
             CHANGELOG.md
         </div>
 
