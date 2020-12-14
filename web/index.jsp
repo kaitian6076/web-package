@@ -106,11 +106,27 @@
 
 
         for (int i = 0; i < value.size(); i++) {
+            String str1;
 
-            String str1 = "<div style=\"margin-top: 4px; text-align: center\">"
-                    + "<a href=\"detail.jsp?packageName=" + key + "&versionCode=" + value.get(i) + "\" target=\"_blank\">"
-                    + key + ": " + value.get(i) + "</a>"
-                    + "</div>";
+            if (value.get(i).contains("+")) {
+                String[] splitVersion = value.get(i).split("\\+");
+
+
+                str1 = "<div style=\"margin-top: 4px; text-align: center\">"
+                        + "<a href=\"detail.jsp?packageName=" + key + "&versionCode=" + splitVersion[0]
+                        + "&versionCode=" + splitVersion[1] + "\" target=\"_blank\">"
+                        + key + ": " + value.get(i) + "</a>"
+                        + "</div>";
+
+            } else {
+
+                str1 = "<div style=\"margin-top: 4px; text-align: center\">"
+                        + "<a href=\"detail.jsp?packageName=" + key + "&versionCode=" + value.get(i) + "\" target=\"_blank\">"
+                        + key + ": " + value.get(i) + "</a>"
+                        + "</div>";
+
+            }
+
 
             stringBuilder1.append(str1);
 

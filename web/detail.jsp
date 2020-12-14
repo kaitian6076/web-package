@@ -4,7 +4,18 @@
 <%
 
     String packageName = request.getParameter("packageName");
-    String versionCode = request.getParameter("versionCode");
+
+    String versionCode;
+    String[] versionCodeArray = request.getParameterValues("versionCode");
+
+    if (versionCodeArray.length == 1) {
+        versionCode = versionCodeArray[0];
+    } else if (versionCodeArray.length == 2) {
+        versionCode = versionCodeArray[0] + "+" + versionCodeArray[1];
+    } else {
+        versionCode = request.getParameter("versionCode");
+    }
+
 
     String basePath = "/Users/kaitian/Desktop/flutter-pub-repository";
 
