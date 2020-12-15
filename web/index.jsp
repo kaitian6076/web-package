@@ -352,7 +352,7 @@
         <input type="button" id="btn" value="引用格式" onclick="showText()"
                style=" width: 96px; height: 35px;
                     border-radius: 6px; border: 0; margin: 0 0 0 60px; cursor: pointer;
-                    background-color: #5B87D6; outline: none; box-shadow: 1px 2px #6495ed ">
+                    background-color: #6495ed; outline: none;">
 
         <div id="showHelp"
 
