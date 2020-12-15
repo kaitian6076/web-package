@@ -229,6 +229,8 @@
 
         window.onload = function () {
             document.getElementById("bodyContainer").style.minHeight = (window.innerHeight + 10).toString() + "px"
+            document.getElementById("bodyContainer").style.background = "linear-gradient(#6495ed, #FDF5E6, #6495ed)"
+
         };
 
 
@@ -295,7 +297,7 @@
 </head>
 
 
-<body style="background: #6495ed" id="bodyContainer">
+<body id="bodyContainer">
 
 
 <div style="margin: 0 auto; width: 1000px;">

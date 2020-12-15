@@ -51,6 +51,9 @@
 
     <script type="text/javascript">
         window.onload = function () {
+            document.getElementById("detailBodyContainer").style.minHeight = (window.innerHeight + 10).toString() + "px"
+            document.getElementById("detailBodyContainer").style.background = "linear-gradient(#6495ed, #FDF5E6, #6495ed)"
+
             let uploadTimeText = "<%=uploadTime%>";
             let packageDetailText = "<%=packageDetailJson%>";
             let readmeText = "<%=readmeMd%>";
@@ -78,7 +81,7 @@
 
 </head>
 
-<body style="background: #6495ed">
+<body id="detailBodyContainer">
 
 
 <div style="margin: 0 auto; width: 900px;">
