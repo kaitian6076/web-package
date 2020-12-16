@@ -54,6 +54,8 @@
             document.getElementById("detailBodyContainer").style.minHeight = (window.innerHeight + 10).toString() + "px"
             document.getElementById("detailBodyContainer").style.background = "linear-gradient(#6495ed, #FDF5E6, #6495ed)"
 
+            document.getElementById("divDetailHeader").style.display = "block";
+
             let uploadTimeText = "<%=uploadTime%>";
             let packageDetailText = "<%=packageDetailJson%>";
             let readmeText = "<%=readmeMd%>";
@@ -86,13 +88,15 @@
 
 <div style="margin: 0 auto; width: 900px;">
 
+    <div id="divDetailHeader" style="display: none">
+        <div style="text-align: center; font-size: 20px; font-weight: bold; margin-top: 10px">package详情
+        </div>
 
-    <div style="text-align: center; font-size: 20px; font-weight: bold; margin-top: 10px">package详情
+        <div style="text-align: center; font-size: 19px; margin-top: 3px"><%=packageName%>
+            - <%=versionCode%>
+        </div>
     </div>
 
-    <div style="text-align: center; font-size: 19px; margin-top: 3px"><%=packageName%>
-        - <%=versionCode%>
-    </div>
 
     <div id="divDetailContainer" style="display: none">
 

@@ -305,40 +305,38 @@
 
     <div id="container_div" style="
 
-                  padding-top: 20px; padding-bottom: 35px">
+                  padding-top: 25px; padding-bottom: 35px">
 
-        <div style="position: relative; height: 30px">
+<%--        <div style="position: relative; height: 30px">--%>
 
-                  <span style=" margin-left: 60px;
-                     font-size: 19px; font-weight: bold;
-                     position: relative; top: 2px;
-                     ">packages列表</span>
+<%--                  <span style=" margin-left: 60px;--%>
+<%--                     font-size: 19px; font-weight: bold;--%>
+<%--                     position: relative; top: 2px;--%>
+<%--                     ">packages列表</span>--%>
 
-            <input type="text" id="searchText" placeholder="搜索..." oninput="textInput()"
+            <input type="text" id="searchText" placeholder="Search packages..." oninput="textInput()"
 
                    style="background-color: #F5F5F5;
 
-                     margin-left: 65px;
+                     margin-left: 245px;
 
-                    /*position: absolute; left: 383px;*/
+                     height: 36px;
 
-                     height: 30px;
+                     width: 470px;
 
-                     width: 200px;
+                     padding-left: 20px;
 
-                     padding-left: 15px;
-
-                     padding-right: 15px;
+                     padding-right: 20px;
 
                      outline: none;
 
                      border: 0;
 
-                     border-radius: 15px;">
+                     border-radius: 18px;">
 
-        </div>
+<%--        </div>--%>
 
-        <div style="display: table">
+        <div style="display: table; margin-top: 5px">
 
             <%= stringBuilder2.toString()%>
 
