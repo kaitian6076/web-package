@@ -100,7 +100,7 @@
     <div id="divDetailContainer" style="display: none">
 
 
-        <div style="font-size: 19px; font-weight: bold; margin-top: 7px; margin-left: 10px">
+        <div style="font-size: 19px; font-weight: bold; margin-top: 8px; margin-left: 10px">
             Information
         </div>
 
