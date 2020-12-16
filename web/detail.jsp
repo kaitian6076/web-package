@@ -89,19 +89,18 @@
 <div style="margin: 0 auto; width: 900px;">
 
     <div id="divDetailHeader" style="display: none">
-        <div style="text-align: center; font-size: 20px; font-weight: bold; margin-top: 10px">package详情
+        <div style="text-align: center; font-size: 21px; font-weight: bold; margin-top: 13px"><%=packageName%> - <%=versionCode%>
         </div>
 
-        <div style="text-align: center; font-size: 19px; margin-top: 3px"><%=packageName%>
-            - <%=versionCode%>
-        </div>
+<%--        <div style="text-align: center; font-size: 19px; margin-top: 3px">--%>
+<%--        </div>--%>
     </div>
 
 
     <div id="divDetailContainer" style="display: none">
 
 
-        <div style="font-size: 19px; font-weight: bold; margin-top: 5px; margin-left: 10px">
+        <div style="font-size: 19px; font-weight: bold; margin-top: 7px; margin-left: 10px">
             Information
         </div>
 
