@@ -231,6 +231,7 @@
             document.getElementById("bodyContainer").style.minHeight = (window.innerHeight + 10).toString() + "px"
             document.getElementById("bodyContainer").style.background = "linear-gradient(#6495ed, #FDF5E6, #6495ed)"
 
+            document.getElementById("divContainerId").style.display = "block";
         };
 
 
@@ -300,12 +301,9 @@
 <body id="bodyContainer">
 
 
-<div style="margin: 0 auto; width: 1000px;">
+<div style="margin: 0 auto; width: 1000px; display: none" id="divContainerId">
 
-
-    <div id="container_div" style="
-
-                  padding-top: 25px; padding-bottom: 35px">
+    <div style="padding-top: 25px; padding-bottom: 35px">
 
 <%--        <div style="position: relative; height: 30px">--%>
 
