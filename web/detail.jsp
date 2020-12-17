@@ -89,16 +89,12 @@
 <div style="margin: 0 auto; width: 900px;">
 
     <div id="divDetailHeader" style="display: none">
-        <div style="text-align: center; font-size: 21px; font-weight: bold; margin-top: 13px"><%=packageName%> - <%=versionCode%>
+        <div style="text-align: center; font-size: 21px; font-weight: bold; margin-top: 20px"><%=packageName%> - <%=versionCode%>
         </div>
-
-<%--        <div style="text-align: center; font-size: 19px; margin-top: 3px">--%>
-<%--        </div>--%>
     </div>
 
 
-    <div id="divDetailContainer" style="display: none">
-
+    <div id="divDetailContainer" style="display: none; padding-bottom: 35px">
 
         <div style="font-size: 19px; font-weight: bold; margin-top: 8px; margin-left: 10px">
             Information
@@ -145,7 +141,7 @@
         </div>
 
         <div id="changelogDivId" style="background: whitesmoke;
-     padding: 10px 20px 20px 20px; margin: 15px 0px 35px 0px; border-radius: 6px">
+     padding: 10px 20px 20px 20px; margin: 15px 0px 0px 0px; border-radius: 6px">
 
         </div>
 

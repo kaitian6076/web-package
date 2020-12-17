@@ -166,7 +166,7 @@
                 "                      \">\n" +
                 "\n" +
                 "                  <div style=\"text-align: center;\n" +
-                "                        font-weight: bold;\n" +
+                "                        font-weight: bold; color: #333333;\n" +
                 "                        overflow: hidden;\n" +
                 "                        text-overflow: ellipsis;\n" +
                 "                        \">" + key + "\n" +
@@ -247,18 +247,13 @@
                     }
                 );
 
-                document.getElementById("bottomShowDiv").style.display = "block";
-
                 return;
             }
-
-            let hasMatch = false;
 
             stringListKey.forEach((v, index, array) => {
 
                     if ((v.toLowerCase().indexOf(value.toLowerCase())) !== -1) {
                         document.getElementById(v).style.display = "block";
-                        hasMatch = true;
                     } else {
                         document.getElementById(v).style.display = "none";
                     }
@@ -266,32 +261,38 @@
                 }
             )
 
-            if (hasMatch) {
-                document.getElementById("bottomShowDiv").style.display = "block";
-            } else {
-                document.getElementById("bottomShowDiv").style.display = "none";
-            }
-
         }
 
 
-        function showText() {
+        let TextDivTimeout;
 
-            if (document.getElementById("showHelp").style.display === "none") {
-
-                document.getElementById("showHelp").style.display = "block"
-
-                document.getElementById("btn").value = "隐藏"
-
-            } else {
-
-                document.getElementById("showHelp").style.display = "none"
-
-                document.getElementById("btn").value = "引用格式"
-
+        function installTextShowDiv() {
+            if (typeof TextDivTimeout != "undefined") {
+                clearTimeout(TextDivTimeout)
             }
 
+            document.getElementById("installTextId").style.color = "#E6E6E6"
+            document.getElementById("installContentId").style.display = "block"
         }
+
+        function installContentShowDiv() {
+            clearTimeout(TextDivTimeout);
+            document.getElementById("installContentId").style.display = "block"
+        }
+
+        function installTextDismissDiv() {
+            document.getElementById("installTextId").style.color = "#F5F5F5"
+
+            TextDivTimeout = setTimeout(function () {
+                document.getElementById("installContentId").style.display = "none"
+            }, 300);
+
+        }
+
+        function installContentDismissDiv() {
+            document.getElementById("installContentId").style.display = "none"
+        }
+
 
     </script>
 
@@ -303,22 +304,49 @@
 
 <div style="margin: 0 auto; width: 1000px; display: none" id="divContainerId">
 
+    <div onmouseover="installTextShowDiv()" onmouseout="installTextDismissDiv()" style="position: absolute;
+         margin-left: 880px; margin-top: 38px; cursor: pointer; color: #F5F5F5" id="installTextId">Installing</div>
+
+    <div id="installContentId"
+
+         style=" background: whitesmoke; border-radius: 6px;
+                      z-index: 999; position: absolute;
+
+                      display: none; width: fit-content;
+
+                      margin-left: 800px; margin-top: 70px;
+
+                      padding: 10px 10px 13px;" onmouseover="installContentShowDiv()" onmouseout="installContentDismissDiv()">
+
+        <div>dependencies:</div>
+
+        <div style="margin-left: 20px; margin-top: 1px"><font
+                color="#6495ed">packageName:</font>
+        </div>
+
+        <div style="margin-left: 40px; margin-top: 1px">hosted:</div>
+
+        <div style="margin-left: 60px; margin-top: 1px">name: <font
+                color="#6495ed">packageName</font></div>
+
+        <div style="margin-left: 60px; margin-top: 1px">url: <font color="#6495ed">http://192.168.1.118:8081</font>
+        </div>
+
+        <div style="margin-left: 40px; margin-top: 1px">version: <font
+                color="#6495ed">^0.0.1</font></div>
+
+    </div>
+
+
     <div style="padding-top: 25px; padding-bottom: 35px">
 
-<%--        <div style="position: relative; height: 30px">--%>
-
-<%--                  <span style=" margin-left: 60px;--%>
-<%--                     font-size: 19px; font-weight: bold;--%>
-<%--                     position: relative; top: 2px;--%>
-<%--                     ">packages列表</span>--%>
-
-            <input type="text" id="searchText" placeholder="Search packages..." oninput="textInput()"
+            <input type="text" id="searchText" placeholder="Search packages..." oninput="textInput()" autocomplete="off"
 
                    style="background-color: #F5F5F5;
 
                      margin-left: 245px;
 
-                     height: 36px;
+                     height: 38px;
 
                      width: 470px;
 
@@ -330,9 +358,7 @@
 
                      border: 0;
 
-                     border-radius: 18px;">
-
-<%--        </div>--%>
+                     border-radius: 19px;">
 
         <div style="display: table; margin-top: 5px">
 
@@ -341,46 +367,6 @@
         </div>
 
     </div>
-
-
-    <div style="padding-bottom: 35px; display: block" id="bottomShowDiv">
-
-        <input type="button" id="btn" value="引用格式" onclick="showText()"
-               style=" width: 96px; height: 35px;
-                    border-radius: 6px; border: 0; margin: 0 0 0 60px; cursor: pointer;
-                    background-color: #6495ed; outline: none;">
-
-        <div id="showHelp"
-
-             style=" background-color: lavenderblush; border-radius: 6px;
-
-                      display: none; width: fit-content;
-
-                      margin: 20px 0 0 40px;
-
-                      padding: 10px 10px 13px;">
-
-            <div>dependencies:</div>
-
-            <div style="margin-left: 20px; margin-top: 1px"><font
-                    color="#6495ed">packageName:</font>
-            </div>
-
-            <div style="margin-left: 40px; margin-top: 1px">hosted:</div>
-
-            <div style="margin-left: 60px; margin-top: 1px">name: <font
-                    color="#6495ed">packageName</font></div>
-
-            <div style="margin-left: 60px; margin-top: 1px">url: <font color="#6495ed">http://192.168.1.118:8081</font>
-            </div>
-
-            <div style="margin-left: 40px; margin-top: 1px">version: <font
-                    color="#6495ed">^0.0.1(版本号)</font></div>
-
-        </div>
-
-    </div>
-
 
 </div>
 
